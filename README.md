@@ -55,7 +55,7 @@ project_node_js/
 ```
 
 ## Usage(การใช้งาน)
-
+```
 แสดงสินค้าเข้าเว็บไซต์ที่ /
 
 จะแสดงรายการสินค้าทั้งหมดพร้อมรูปภาพ
@@ -78,11 +78,13 @@ project_node_js/
 มี confirm() ยืนยันก่อนลบจริง
 
 ข้อมูลจะถูกลบจาก MongoDB และลบภาพได้ในขั้นถัดไป (ถ้าเพิ่ม logic)
-
+```
 
 # Run the server
+```
 node app.js
-# หรือใช้ nodemon เพื่อไม่ต้อง restart ทุกครั้ง
+หรือใช้ nodemon เพื่อไม่ต้อง restart ทุกครั้ง
 npx nodemon app.js
 # หรือถ้าตั้ง script ไว้ใน package.json
 npm start
+```
