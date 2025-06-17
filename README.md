@@ -12,3 +12,12 @@
   "multer": "2.0.1",
   "nodemon": "^3.1.10"
 }
+---
+## ⚙️ Tech Stack
+| เทคโนโลยี                | รายละเอียด                      |
+| ------------------------ | ------------------------------- |
+| **Node.js + Express.js** | ใช้เป็น Web Server และ Routing  |
+| **MongoDB + Mongoose**   | จัดการฐานข้อมูลแบบ NoSQL        |
+| **EJS**                  | Template Engine สำหรับแสดง HTML |
+| **Multer**               | จัดการอัปโหลดรูปภาพ             |
+| **Bootstrap / CSS**      | ใช้ตกแต่ง UI ผ่านไฟล์ static    |
