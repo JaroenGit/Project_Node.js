@@ -48,6 +48,8 @@ project_node_js/
 │   ├── insert.ejs        # ฟอร์มเพิ่มสินค้า
 │   ├── show.ejs          # แสดงรายละเอียดสินค้า
 │   └── header.ejs        # Header แยกไว้เรียกใช้รวม
+│   └── edit.ejs          # แก้ใขข้อมูล
+│   └── tabledata.ejs     # แสดงข้อมูลในรูปแบบตาราง
 ├── public/               # ไฟล์ Static เช่น CSS, รูปภาพ
 │   ├── css/              # ไฟล์ตกแต่ง
 │   └── img/products/     # รูปสินค้าที่อัปโหลด
