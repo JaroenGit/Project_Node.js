@@ -1,18 +1,27 @@
 # Project_Node.js+Express.js+EJS+ MongoDB
-ระบบจัดการสินค้าแบบ Fullstack พื้นฐาน ใช้เทคโนโลยี Express, MongoDB, EJS และรองรับการอัปโหลดรูปภาพผ่าน `multer`
-การตั้งค่า/ติดตั้งpackagesโปรเจกต์ Node.js
-   - ejs: 3.1.10,
-   - express: 5.1.0
-   - mongoose": 8.15.2
-   - multer: 2.0.1
-   - nodemon: "^3.1.10
+ระบบจัดการสินค้าแบบ Fullstack พื้นฐาน พัฒนาโดยใช้ Node.js และ Express.js ฝั่ง Backend และใช้ EJS แสดงผลฝั่ง Frontend พร้อมรองรับการอัปโหลดรูปภาพด้วย `multer`
+---
+
+## 🧰 การตั้งค่า / Packages ที่ใช้
+
+```json
+"dependencies": {
+  "ejs": "3.1.10",
+  "express": "5.1.0",
+  "mongoose": "8.15.2",
+  "multer": "2.0.1",
+  "nodemon": "^3.1.10"
+}
 ------------------------------------------------    
 ## ⚙️ Tech Stack
-- **Node.js** + **Express.js** -->ใช้เป็น server  
-- **MongoDB** + **Mongoose** -->ใช้ในการจัดการเกี่ยวกับฐานข้อมูล
-- **EJS** --> (template engine) ใช้แสดงผลในรูปแบบของ HTML
-- **Multer** --> (จัดการไฟล์ภาพ) ใช้เพื่อสามารถบันทึกข้อมูลภาพ และนามสกุลไฟล์ภาพ
-- **Bootstrap / Custom CSS** (สำหรับ UI) --> ใช้หรับการตกแต่งไฟล์ .HTML หรือ.ejs
+| เทคโนโลยี                | รายละเอียด                      |
+| ------------------------ | ------------------------------- |
+| **Node.js + Express.js** | ใช้เป็น Web Server และ Routing  |
+| **MongoDB + Mongoose**   | จัดการฐานข้อมูลแบบ NoSQL        |
+| **EJS**                  | Template Engine สำหรับแสดง HTML |
+| **Multer**               | จัดการอัปโหลดรูปภาพ             |
+| **Bootstrap / CSS**      | ใช้ตกแต่ง UI ผ่านไฟล์ static    |
+
 ------------------------------------------------
 ##📦 Features
     - แสดงรายการสินค้า (พร้อมรูปภาพ)
@@ -25,42 +34,50 @@
 ------------------------------------------------
 ## 📁 Project Structure
 project_node_js/
-├── models/ # Mongoose schema
-│ └── product.js
-├── routes/ # Express route handler
-│ └── myrouter.js
-├── views/ # EJS templates
-│ ├── index.ejs
-│ ├── show.ejs
-│ ├── insert.ejs
-│ └── header.ejs
-├── public/ # Static files
-│ ├── css/
-│ └── img/products/ # Uploaded images
-├── app.js # Main application file
+├── models/               # Mongoose Schema
+│   └── product.js
+├── routes/               # Routing
+│   └── myrouter.js
+├── views/                # ไฟล์ EJS Template
+│   ├── index.ejs         # หน้าแสดงรายการ
+│   ├── insert.ejs        # ฟอร์มเพิ่มสินค้า
+│   ├── show.ejs          # แสดงรายละเอียดสินค้า
+│   └── header.ejs        # Header แยกไว้เรียกใช้รวม
+├── public/               # ไฟล์ Static เช่น CSS, รูปภาพ
+│   ├── css/              # ไฟล์ตกแต่ง
+│   └── img/products/     # รูปสินค้าที่อัปโหลด
+├── app.js                # จุดเริ่มต้นของแอป
 └── package.json
+
 ------------------------------------------------
 ## Usage(การใช้งาน)
 
-🔹 แสดงสินค้า
-หน้า / จะแสดงสินค้าทั้งหมด
+แสดงสินค้าเข้าเว็บไซต์ที่ /
 
-รูปภาพจะโหลดจาก /public/img/products
+จะแสดงรายการสินค้าทั้งหมดพร้อมรูปภาพ
 
 🔹 เพิ่มสินค้าใหม่
-เปิดหน้า /insert
+เข้าหน้า /insert
 
 กรอก name, price, size, description และเลือกรูปภาพ
 
-กด "บันทึก"
+กดปุ่ม "บันทึก"
 
 🔹 ดูรายละเอียดสินค้า
-คลิก "เพิ่มเติม" ที่แต่ละสินค้า
+คลิกปุ่ม "เพิ่มเติม" หรือ "Read More"
+
+ข้อมูลจะแสดงจาก product._id ที่ query มาจาก MongoDB
 
 🔹 ลบสินค้า
-มีปุ่ม "ลบ" พร้อมยืนยันก่อนส่ง POST ไปยัง /delete/:id
+ใช้ <form method="POST" action="/delete/:id">
+
+มี confirm() ยืนยันก่อนลบจริง
+
+ข้อมูลจะถูกลบจาก MongoDB และลบภาพได้ในขั้นถัดไป (ถ้าเพิ่ม logic)
 ------------------------------------------------
 # Run the server
 node app.js
-# หรือใช้ nodemon
-npx nodemon app.js หรือ npm star
+# หรือใช้ nodemon เพื่อไม่ต้อง restart ทุกครั้ง
+npx nodemon app.js
+# หรือถ้าตั้ง script ไว้ใน package.json
+npm start
