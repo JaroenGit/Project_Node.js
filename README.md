@@ -31,6 +31,7 @@
     - ใช้ EJS แสดงผลหน้า HTML
     - CSS แยกไฟล์ผ่าน `/public`
 
+```
 
 ## 📁 Project Structure
 project_node_js/
