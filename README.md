@@ -26,7 +26,7 @@
 ## ชุดฐานข้อมูล
 ```
     - ทำการ import ไฟล์ productDB.product.json ไปใช้ใน MongoDB
-    - เข้าไปในโฟลเดอร์ models->product.js
+    - เข้าไปในโฟลเดอร์ models->products.js
     - ทำการตั้งค่า/ตรวจเช็ก 'localhost:27017/productDB' ตามที่อยู่ใน MongoDB
 ```
 
