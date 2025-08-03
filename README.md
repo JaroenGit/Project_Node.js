@@ -87,6 +87,7 @@ npx nodemon app.js
 # หรือถ้าตั้ง script ไว้ใน package.json
 npm start
 ```
+
 #✍️ ผู้พัฒนา
 ```
 ชื่อ-นามสุก: เจริญ ศักดิ์เจริญชัยกุล 
